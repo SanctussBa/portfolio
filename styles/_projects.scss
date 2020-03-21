@@ -1,0 +1,245 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+.projects {
+  background: $color-main;
+  place-items: center;
+  display: grid;
+  padding-bottom: 40px;
+
+  @media only screen and (max-width: 900px) {
+    grid-template-columns: auto;
+    grid-template-rows: 120px repeat(6, 1fr);
+    grid-row-gap: 30px;
+    grid-template-areas:
+    "projects"
+    "project1"
+    "project2"
+    "project3"
+    "project4"
+    "project5"
+    "project6";
+  }
+
+
+  @media only screen and (min-width: 900px) {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 120px repeat(3, 1fr);
+    grid-row-gap: 40px;
+    grid-template-areas:
+    "projects projects"
+    "project1 project2"
+    "project3 project4"
+    "project5 project6"
+  }
+
+  @media only screen and (min-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 120px 1fr 1fr;
+    grid-row-gap: 40px;
+    grid-template-areas:
+    "projects projects projects"
+    "project1 project2 project3"
+    "project4 project5 project6"
+  }
+
+  div.title-projects {
+    display: block;
+    width: 100%;
+    text-align: center;
+
+    grid-area: projects;
+    border-bottom: solid 1px $gold-highlight;
+    h2 {
+      &::after {
+        content: ".";
+        color: $gold-highlight;
+        font-size: 70px;
+      }
+    }
+  }
+  div.project1 {
+    grid-area: project1;
+    background: $color-lighten;
+    border-radius: 32% 68% 79% 21% / 30% 30% 70% 70%;
+
+    @include flexContentMiddle();
+    h3 {
+      padding: 20px 0px 10px 0px;
+    }
+    p {
+      padding: 20px;
+      text-align: center;
+    }
+    a {
+      img {
+        height: 300px;
+        width: auto;
+        border-radius: 32% 68% 79% 21% / 30% 30% 70% 70%;
+        @include smoothHover();
+
+      }
+    }
+
+    div.project-title {
+      @include flexContentMiddle();
+
+      img {
+        height: 25px;
+        width: auto;
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+
+    }
+
+  }
+  div.project2 {
+    grid-area: project2;
+    background: $color-lighten;
+    border-radius: 32% 68% 29% 71% / 55% 30% 70% 45%;
+
+    @include flexContentMiddle();
+    a {
+      img {
+        height: 300px;
+        max-width: auto;
+        border-radius: 32% 68% 29% 71% / 55% 30% 70% 45%;
+        @include smoothHover();
+
+      }
+    }
+
+    div.project-title {
+      @include flexContentMiddle();
+      h3 {
+        padding: 20px 0px 10px 0px;
+      }
+      p {
+        padding: 20px;
+        text-align: center;
+      }
+      img {
+        height: 25px;
+        width: auto;
+      }
+
+    }
+  }
+  div.project3 {
+    grid-area: project3;
+    background: $color-lighten;
+    border-radius: 58% 42% 29% 71% / 46% 64% 36% 54%;
+    @include flexContentMiddle();
+    a {
+      img {
+        height: 300px;
+        width: auto;
+        border-radius: 58% 42% 29% 71% / 46% 64% 36% 54%;
+        @include smoothHover();
+      }
+    }
+    div.project-title {
+      @include flexContentMiddle();
+      h3 {
+        padding: 20px 0px 10px 0px;
+      }
+      p {
+        padding: 20px;
+        text-align: center;
+      }
+      img {
+        height: 25px;
+        width: auto;
+      }
+
+    }
+  }
+  div.project4 {
+    grid-area: project4;
+    background: $color-lighten;
+    border-radius: 84% 16% 75% 25% / 46% 64% 36% 54%;
+    @include flexContentMiddle();
+    a {
+      img {
+        height: 300px;
+        width: auto;
+        border-radius: 84% 16% 75% 25% / 46% 64% 36% 54%;
+        @include smoothHover();
+      }
+    }
+    div.project-title {
+      @include flexContentMiddle();
+      h3 {
+        padding: 20px 0px 10px 0px;
+      }
+      p {
+        padding: 20px;
+        text-align: center;
+      }
+      img {
+        height: 25px;
+        width: auto;
+      }
+
+    }
+  }
+  div.project5 {
+    grid-area: project5;
+    background: $color-lighten;
+    border-radius: 52% 48% 75% 25% / 24% 81% 19% 76% ;
+    @include flexContentMiddle();
+    a {
+      img {
+        height: 300px;
+        width: auto;
+        border-radius: 52% 48% 75% 25% / 24% 81% 19% 76% ;
+        @include smoothHover();
+      }
+    }
+    div.project-title {
+      @include flexContentMiddle();
+      h3 {
+        padding: 20px 0px 10px 0px;
+      }
+      p {
+        padding: 20px;
+        text-align: center;
+      }
+      img {
+        height: 25px;
+        width: auto;
+      }
+
+    }
+  }
+  div.project6 {
+    grid-area: project6;
+    background: $color-lighten;
+    border-radius: 79% 21% 91% 9% / 56% 86% 14% 44% ;
+    @include flexContentMiddle();
+    a {
+      img {
+        height: 300px;
+        width: auto;
+        border-radius: 79% 21% 91% 9% / 56% 86% 14% 44% ;
+        @include smoothHover();
+      }
+    }
+    div.project-title {
+      @include flexContentMiddle();
+      h3 {
+        padding: 20px 0px 10px 0px;
+      }
+      p {
+        padding: 20px;
+        text-align: center;
+      }
+      img {
+        height: 25px;
+        width: auto;
+      }
+    }
+  }
+}

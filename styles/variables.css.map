@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "variables.css",
+	"sources": [
+		"variables.scss"
+	],
+	"sourcesContent": [
+		"/* colors*/\r\n\r\n$color-sides: rgb(247, 251, 255);\r\n$color-lighten: rgb(237, 245, 255);\r\n$color-main: rgb(232, 240, 250);\r\n$color-light-shadow: rgb(214, 214, 214);\r\n$color-dark-shadow: rgb(93, 93, 93);\r\n$text-color: rgb(54, 49, 79);\r\n$gold-highlight: rgb(210, 189, 122);\r\n\r\n/* shadow shades*/\r\n\r\n\r\n$shadow-outset: -3px -3px 5px white, 3px 3px 5px rgba(93, 93, 93, .188);\r\n$shadow-inset: inset -3px -3px 5px white, inset 3px 3px 5px rgba(93, 93, 93, .188);\r\n\r\n$shadow-golden: 0px 0px 5px rgb(210, 189, 122), 0px 0px 10px rgb(210, 189, 122);\r\n"
+	],
+	"names": [],
+	"mappings": "AAAA,WAAW;AAUX,kBAAkB"
+}

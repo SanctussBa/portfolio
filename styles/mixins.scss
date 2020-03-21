@@ -1,0 +1,185 @@
+@import "variables.scss";
+
+@mixin flexCenter(){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin glow(){
+  -webkit-animation: glow .8s ease-in-out infinite alternate;
+  -moz-animation: glow .8s ease-in-out infinite alternate;
+  animation:  glow .8s ease-in-out infinite alternate;
+
+}
+
+@mixin aboutGrid(){
+
+  max-width: 410px;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 150px auto;
+
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+
+}
+
+::-webkit-scrollbar-track {
+  background-color: $color-main;
+  border-right: solid 1px $gold-highlight;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+
+  background: transparent;
+  border: solid 2px $gold-highlight;
+
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(210 + 5, 189 + 5, 122 + 5);
+
+}
+
+@mixin flexContentMiddle(){
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin smoothHover(){
+  transform: scale(1);
+  transition: ease-in-out 0.3s;
+  &:hover {
+    transform: scale(1.02);
+    filter: saturate(1.5);
+    border-radius: 50%;
+    transition: ease-in-out 0.3s;
+  }
+}
+
+/* CONTACT FORM */
+form {
+  position : relative;
+  max-width  : 400px;
+  height : auto;
+  margin : 0 auto;
+  padding: 1em;
+  box-sizing: border-box;
+  background : $color-main;
+  border-radius: 5%;
+  box-shadow: $shadow-outset, $shadow-inset;
+}
+
+input[type=text], input[type=email], textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid $gold-highlight;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  font-family: inherit;
+  &:focus {
+    outline: none !important;
+    box-shadow: 0px 0px 5px $gold-highlight;
+  }
+}
+
+
+input[type=submit] {
+  background-color: $gold-highlight;
+  color: white;
+  font-weight: bold;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  place-items: center;
+  border-radius: 10% !important;
+  transition: ease-in-out 0.4s;
+
+}
+
+input[type=submit]:hover {
+  background-color: rgb(210 + 20, 189 + 20, 122 + 20);
+  border-radius: 72% 28% 55% 45% / 37% 99% 1% 63% !important;
+  transition: 0.2s;
+}
+
+/* ABOUT CONTAINER*/
+
+.ac-container{
+  @include flexCenter();
+  flex-direction: column;
+	width: auto;
+	margin: 10px auto 30px auto;
+	text-align: left;
+}
+.ac-container label{
+
+	padding: 10px 0px 10px 20px;
+	position: relative;
+	z-index: 20;
+	display: block;
+	height: auto;
+	cursor: pointer;
+	color: $text-color;
+
+	font-size: 18px;
+
+
+}
+
+.ac-container label:hover{
+	color: rgb(210, 189, 122);
+}
+
+.ac-container input{ /* to hide radiobutton image */
+	display: none;
+}
+.ac-container article{
+
+	overflow: hidden;
+	height: 20px;
+	position: relative;
+	z-index: 10;
+	-webkit-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+	-moz-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+	-o-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+	-ms-transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+	transition: height 0.3s ease-in-out, box-shadow 0.6s linear;
+}
+.ac-container article p{
+
+	line-height: 23px;
+	font-size: 14px;
+	padding: 20px 10px 20px 30px;
+
+}
+.ac-container input:checked ~ article{
+	-webkit-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+	-moz-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+	-o-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+	-ms-transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+	transition: height 0.5s ease-in-out, box-shadow 0.1s linear;
+  height: auto;
+}
+.ac-container input:checked ~ article.ac{
+	height: 140px;
+}
+.ac-container input:checked ~ article.ac-medium{
+	height: 180px;
+}
+.ac-container input:checked ~ article.ac-large{
+	height: 230px;
+}

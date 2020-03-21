@@ -1,0 +1,170 @@
+
+div.main {
+
+
+  background: $color-main;
+  min-width: 80%;
+
+  box-shadow: $shadow-outset;
+  div.fr-1 {
+    @include flexCenter();
+
+    box-shadow: $shadow-outset;
+
+    width: 100%;
+    height: auto;
+
+    div.fr-2 {
+      width: 99%;
+      height: 98%;
+      box-shadow: $shadow-inset;
+      background-color: transparent;
+      overflow: hidden;
+      background-image: url('../static/laptop.jpg');
+      background-size: cover;
+      background-attachment: fixed;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 200px auto;
+      grid-row-gap: 30px;
+      @media only screen and (max-width:1020px) {
+        grid-template-columns: 100%;
+        grid-template-rows: 200px 200px auto;
+      }
+      div.grid-quote {
+
+        @include flexCenter();
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+
+        @media only screen and (max-width:1020px) {
+          grid-row: 1;
+          padding: 20px;
+          font-size: 20px;
+        }
+
+        text-align: center;
+        background-color: transparent;
+        h1 {
+          font-family: 'Amatic SC', cursive;
+          font-weight: bold;
+          letter-spacing: 3px;
+          color: $text-color;
+          font-size: 40px;
+          @media only screen and (max-width: 900px){
+            font-size: 20px;
+            padding: 0;
+          }
+        }
+      }
+
+      div.bulb-img {
+        @include flexCenter();
+        align-items: flex-start;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        margin: 0px 60px 60px 60px;
+
+        @media only screen and (max-width:1020px) {
+          grid-row: 2;
+
+          margin: 10px;
+        }
+        @media only screen and (max-width:600px) {
+          margin:0px;
+
+        }
+
+        position: relative;
+        border-radius: 35% 65% 85% 15% / 56% 54% 46% 44%;
+        background-color: transparent;
+        box-shadow: $shadow-outset;
+        background-image: url("../static/bulb.png");
+        background-position: center;
+        background-size: auto;
+        background-repeat: no-repeat;
+
+        div.binary {
+          padding-left: 150px;
+          padding-top: 60px;
+          padding-right: 10px;
+          position:absolute;
+          width: 90%;
+          height: 70%;
+          display: grid;
+          place-items: center;
+          overflow: hidden;
+          p {
+            font-size: 20px;
+            letter-spacing: 30px;
+            color: $gold-highlight;
+          }
+        }
+        &::after {
+          content: '';
+          position:absolute;
+          height: 90%;
+          width: 90%;
+          border-radius: 35% 65% 85% 15% / 56% 54% 46% 44%;
+          background-color: transparent;
+          box-shadow: $shadow-inset;
+        }
+      }
+      div.hello {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @media only screen and (max-width:1020px) {
+          grid-row: 3;
+        }
+        text-align: center;
+
+        padding-left: 60px;
+        padding-right: 60px;
+        @media only screen and (max-width: 600px){
+          padding: 10px;
+        }
+        span {
+          &::after {
+            content: '.';
+            font-size:70px;
+            color: $gold-highlight;
+          }
+        }
+        p {
+          text-align: center;
+          font-size: 18px;
+        }
+        h1 {
+          @media only screen and (max-width: 800px){
+            font-size: 20px;
+          }
+        }
+        div.arrow {
+          @include flexCenter;
+          height: 200px;
+
+
+          img {
+            height: 70px;
+            -webkit-animation: mover 1s infinite  alternate;
+            animation: mover 1s infinite  alternate;
+          }
+          @-webkit-keyframes mover {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-20px); }
+          }
+          @keyframes mover {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-20px); }
+          }
+        }
+      }
+    }
+  }
+}

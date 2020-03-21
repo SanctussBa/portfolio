@@ -1,0 +1,132 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+
+header {
+  @include flexCenter();
+  position: relative;
+  background: $color-main;
+  min-width: 80%;
+
+  box-shadow: $shadow-outset;
+
+  nav {
+    width: 98%;
+    height: 80%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: grid;
+    grid-template-columns: 20% 70% 10%;
+    grid-template-areas:
+    "logo"
+    "buttons"
+    "contact";
+    box-shadow: $shadow-inset;
+    background-color: transparent;
+
+
+    @media only screen and (max-width:1000px) {
+      grid-template-columns: 100%;
+      grid-template-rows: logo buttons contact;
+      grid-row-gap: 20px;
+
+    }
+
+
+    img.logo {
+
+      height: 90px;
+      margin-left: 30px;
+
+    }
+    ul {
+      @include flexCenter();
+      float: right;
+      list-style-type: none;
+      overflow: visible;
+      justify-content: flex-end;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+
+      @media only screen and (max-width:1000px) {
+        justify-content: center;
+      }
+
+      @media only screen and (max-width:650px) {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-row-gap: 20px;
+
+      }
+
+      li {
+        font-size: 16px;
+        height: 40px;
+        margin-right: 30px;
+        margin-left: 30px;
+        text-transform: uppercase;
+      }
+
+      #glow {
+
+        @include glow();
+      }
+
+      @-webkit-keyframes glow {
+        from {
+          box-shadow: 0 0 10px #fff;
+        }
+        to {
+          box-shadow: 0 0 20px $gold-highlight, 0 0 30px $gold-highlight, 0 0 50px #fff, 0 0 60px #dde1e7;
+        }
+      }
+
+      li a{
+        @include flexCenter();
+        position: relative;
+        box-shadow: $shadow-outset;
+        text-decoration: none;
+        padding: 10px;
+
+        color: $text-color;
+
+        &::after{
+          content:'';
+          position: absolute;
+          height: 80%;
+          width: 90%;
+          background-color: transparent;
+          box-shadow: $shadow-inset;
+
+        }
+        &:hover {
+          box-shadow: $shadow-inset;
+          transform: scale(0.98);
+        }
+        &:focus {
+          color: $gold-highlight;
+        }
+      }
+    }
+
+    div.contact {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 50% 50%;
+      place-items: center;
+
+      @media only screen and (max-width:1000px) {
+        @include flexCenter;
+        justify-content: space-around;
+        padding: 40px;
+      }
+      img {
+        height: 25px;
+        &:hover {
+          opacity: .5;
+        }
+      }
+    }
+  }
+}

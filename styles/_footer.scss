@@ -1,0 +1,134 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+div.footer {
+  @include flexCenter();
+  position: relative;
+  height: auto;
+  width: 100%;
+  background-image: url('../static/laptop.jpg');
+  background-size: cover;
+  box-shadow: $shadow-outset;
+  &::after {
+    content: "";
+    background-color: transparent;
+    height: 90%;
+    width: 98%;
+    box-shadow: $shadow-inset;
+    position: absolute;
+
+  }
+
+  div.footer-area {
+    z-index: 1000;
+    width: 100%;
+    height: auto;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas:
+    "quote quote"
+    "about projects"
+    "logo logo1"
+    "logo logo2"
+    "year year";
+    padding: 20px;
+
+
+    @media only screen and (min-width: 900px) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: repeat(4, auto);
+      grid-template-areas:
+      "quote quote quote"
+      "about logo logo1"
+      "projects logo logo2"
+      "year year year"
+    }
+
+    div.qoute-container {
+      grid-area: quote;
+      font-family: 'Amatic SC', cursive;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: $text-color;
+      padding-top: 20px;
+      padding-bottom: 30px;
+      text-align: center;
+    }
+    div.about-container {
+      grid-area: about;
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        &:hover {
+          color: $gold-highlight;
+        }
+      }
+
+    }
+    div.projects-container {
+      grid-area: projects;
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        &:hover {
+          color: $gold-highlight;
+        }
+      }
+    }
+    div.logo-container {
+      grid-area: logo;
+      a {
+        img {
+          height: 90px;
+        }
+        &:hover {
+        transform: scale(1.02)
+        }
+      }
+    }
+    div.logo-1-container {
+      grid-area: logo1;
+
+      img {
+        height: 25px;
+        padding-left: 20px;
+        &:hover {
+          opacity: .5;
+        }
+      }
+    }
+    div.logo-2-container {
+      grid-area: logo2;
+      img {
+        height: 25px;
+        padding-left: 20px;
+        &:hover {
+          opacity: .5;
+        }
+      }
+    }
+    div.projects-container {
+      grid-area: projects;
+    }
+    div.year-container {
+      grid-area: year;
+
+      h1 {
+        font-size: 18px;
+        &::before{
+          content: ".";
+          font-size: 70px;
+          color: $gold-highlight;
+        }
+        &::after{
+          content: ".";
+          font-size: 70px;
+          color: $gold-highlight;
+        }
+      }
+
+    }
+  }
+}

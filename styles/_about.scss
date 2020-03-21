@@ -1,0 +1,186 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+
+div.about-frame1 {
+  @include flexCenter();
+  background: $color-main;
+  min-width: 80%;
+  box-shadow: $shadow-outset;
+
+  div.about-frame2 {
+
+    @include flexCenter();
+    width: 99%;
+    height: 98%;
+    box-shadow: $shadow-inset;
+    background-color: transparent;
+
+    div.main-grid-about-area {/*Main GRID of ABOUT content*/
+      display: grid;
+      place-items: center;
+      align-self: start;
+      grid-template-columns: auto;
+      grid-template-rows: auto auto auto auto auto;/*Here I add media query*/
+      @media only screen and (min-width: 900px) {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 120px auto 120px;
+        place-items: center;
+        column-gap: 30px;
+
+        padding-bottom: 30px;
+      }
+
+      @media only screen and (min-width: 1200px) {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 120px auto;
+        place-items: start;
+        column-gap: 40px;
+        place-items: start stretch;
+        padding-bottom: 50px;
+      }
+      grid-row-gap: 30px;
+      div.grid-1 {/*.....................ABOUT written area*/
+        height: 120px;
+        display: flex;
+        align-items: stretch;
+        border-bottom: solid 1px $gold-highlight;
+        @media only screen and (min-width: 900px) {
+          grid-area: 1 / 1 / 2 / 3;
+          justify-content: center;
+          max-width: 100%;
+        }
+        @media only screen and (min-width: 1200px) {
+
+          grid-area: 1 / 1 / 2 / 4;
+          justify-content: center;
+          max-width: 100%;
+        }
+        h2 {
+          font-weight: bold;
+          scroll-behavior: smooth;
+
+          &::after{
+            content:'.';
+            color: $gold-highlight;
+            font-size: 70px;
+          }
+        }
+      }
+      div.grid-2{
+        @include aboutGrid();
+
+        @media only screen and (min-width: 900px) {
+          grid-area: 2 / 1 / 3 / 2;
+          height: 644px;
+          place-items: start;
+          overflow-y: auto;
+          overflow-x: hidden;
+        }
+        @media only screen and (min-width: 1200px) {
+          grid-area: 2 / 1 / 3 / 2;
+          height: 644px;
+          place-items: start;
+          overflow-y: auto;
+          overflow-x: hidden;
+
+        }
+        img {
+          height: 70px;
+          grid-area: 1 / 1 / 2 / 2;
+
+
+        }
+        h2 {
+          grid-area: 1 / 2 / 2 / 3;
+          font-weight: bold;
+          font-size: 18px;
+          padding-right: 20px;
+        }
+        section {
+          grid-area: 2 / 1 / 3 / 3;
+        }
+
+
+
+      }
+      div.grid-3 {
+        @include aboutGrid();
+        @media only screen and (min-width: 900px) {
+          grid-area: 2 / 2 / 3 / 3;
+          place-items: start;
+        }
+        @media only screen and (min-width: 1200px) {
+          grid-area: 2 / 2 / 3 / 3;
+          place-items: start;
+        }
+        img {
+          height: 70px;
+        }
+        h2 {
+          font-weight: bold;
+          font-size: 18px;
+          padding-right: 20px;
+        }
+        div.qa-area {
+          grid-area: 2 / 1 / 3 / 3;
+
+          display: flex;
+          flex-direction: column;
+          padding-left: 30px;
+          padding-bottom: 30px;
+
+          h3 {
+            padding-bottom: 10px;
+            padding-top: 10px;
+          }
+          p {
+            font-size: 16px;
+            padding: 5px 30px 10px 50px;
+          }
+        }
+      }
+      div.grid-4 {
+        display: flex;
+        align-items: center;
+        @media only screen and (min-width: 900px) {
+          grid-area: 3 / 2 / 4 / 3;
+        }
+        @media only screen and (min-width: 1200px) {
+          grid-area: 2 / 3 / 3 / 4;
+          min-height: 644px;
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-around;
+          min-height: 644px;
+        }
+        img {
+          height: 70px;
+        }
+        a {
+          @include flexCenter();
+          position: relative;
+          box-shadow: $shadow-outset;
+          text-decoration: none;
+          color: $text-color;
+          font-weight: bold;
+          font-size: 18px;
+          padding: 20px;
+          text-align: center;
+          &::after{
+            content: '';
+            position: absolute;
+            height: 85%;
+            width: 95%;
+            background-color: transparent;
+            box-shadow: $shadow-inset;
+          }
+          &:hover {
+            box-shadow: $shadow-inset;
+            transform: scale(0.98);
+          }
+        }
+      }
+    }
+  }
+}

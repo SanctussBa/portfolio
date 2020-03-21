@@ -1,0 +1,34 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+
+  body {
+
+    background-color: $color-sides;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    color: $text-color;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+
+
+
+    @import "./header";
+    @import "./intro";
+    @import "./about";
+    @import "./projects";
+    @import "./contact";
+    @import "./footer";
+  }
+}

@@ -1,0 +1,86 @@
+
+@import "variables.scss";
+@import "mixins.scss";
+
+div.contact {
+  display: grid;
+  padding-bottom: 40px;
+  grid-template-columns: auto;
+  grid-template-rows: 120px auto auto;
+  grid-row-gap: 30px;
+
+  grid-template-areas:
+  "contact"
+  "mail"
+  "form";
+
+  @media only screen and (min-width: 900px) {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 120px auto;
+    grid-row-gap: 40px;
+    grid-template-areas:
+    "contact contact"
+    "mail form";
+  }
+  div.title-contact {
+    grid-area: contact;
+    @include flexCenter();
+    text-align: center;
+    border-bottom: solid 1px $gold-highlight;
+    h2 {
+      &::after {
+        content: ".";
+        color: $gold-highlight;
+        font-size: 70px;
+      }
+    }
+  }
+  div.mail-img {
+    grid-area: mail;
+    @include flexCenter();
+    border-radius: 35% 65% 85% 15% / 56% 54% 46% 44%;
+    box-shadow: $shadow-outset;
+    position: relative;
+    &::after {
+      content: '';
+      position:absolute;
+      height: 90%;
+      width: 90%;
+      border-radius: 35% 65% 85% 15% / 56% 54% 46% 44%;
+      background-color: transparent;
+      box-shadow: $shadow-inset;
+    }
+    img {
+      height: 150px;
+      @media only screen and (max-width: 900px) {
+        height: 100px;
+      }
+      -webkit-animation:rotate 5s ease-in-out 0s infinite normal;
+      -moz-animation:rotate 5s ease-in-out 0s infinite normal;
+      -ms-animation:rotate 5s ease-in-out 0s infinite normal;
+      animation:rotate 5s ease-in-out 0s infinite normal;
+    }
+    @-webkit-keyframes rotate {
+      0%{ -webkit-transform: scale(1);
+      transform: scale(1.5);}
+
+      50%{ -webkit-transform: scale(1.5);
+      transform: scale(1.5);}
+
+      100%{-webkit-transform: scale(1);
+      transform: scale(1);}
+    }
+    @keyframes rotate {
+      0%{ transform: scale(1); }
+      50%{ transform: scale(1.5); }
+      100%{ transform: scale(1); }
+    }
+  }
+  div.contact-form {
+    grid-area: form;
+    h3{
+      padding: 30px;
+      text-align: center;
+    }
+  }
+}
